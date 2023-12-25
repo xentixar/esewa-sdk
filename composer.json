@@ -1,0 +1,15 @@
+{
+    "name": "xentixar/esewa-sdk",
+    "autoload": {
+        "psr-4": {
+            "Xentixar\\EsewaSdk\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "xentixar",
+            "email": "xentixar@gmail.com"
+        }
+    ],
+    "require": {}
+}
