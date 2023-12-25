@@ -10,6 +10,12 @@ You can install this SDK via Composer. Run the following command in your termina
 composer require xentixar/esewa-sdk
 ```
 
+To generate the autoloader, run the following command in your terminal:
+
+```bash
+composer dump-autoload
+```
+
 ## Usage
 
 ### Configuration
