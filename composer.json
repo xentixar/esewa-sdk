@@ -11,5 +11,6 @@
             "email": "xentixar@gmail.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "license": "MIT"
 }
