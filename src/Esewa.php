@@ -17,7 +17,7 @@ class Esewa
     protected string $signature;
     protected string $secret_key;
 
-    public function config(string $success_url, string $failure_url, float $amount, string $product_code = 'EPAYTEST', float $tax_amount = 0, float $product_service_charge = 0, float $product_delivery_charge = 0)
+    public function config(string $success_url, string $failure_url, float $amount, string $product_code = 'EPAYTEST', string $secret_key = '8gBm/:&EnhH.1/q', float $tax_amount = 0, float $product_service_charge = 0, float $product_delivery_charge = 0)
     {
         $this->success_url = $success_url;
         $this->failure_url = $failure_url;
@@ -28,7 +28,7 @@ class Esewa
         $this->product_delivery_charge = $product_delivery_charge;
         $this->signed_field_names = "total_amount,transaction_uuid,product_code";
         $this->total_amount = $this->tax_amount + $this->amount + $this->product_delivery_charge + $this->product_service_charge;
-        $this->secret_key = "8gBm/:&EnhH.1/q";
+        $this->secret_key = $secret_key;
         $this->transaction_uuid = uniqid() . time();
         $this->signature = $this->generateHmacSignature($this->total_amount, $this->transaction_uuid, $this->product_code, $this->secret_key);
     }
