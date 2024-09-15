@@ -66,7 +66,7 @@ $response = $esewa->validate('1000.00', 'your-transaction-uuid', true);
 
 ## Methods:
 
-`config(string $success_url, string $failure_url, float $amount, string $transaction_uuid, string $product_code = 'EPAYTEST', string $secret_key, float $tax_amount = 0, float $product_service_charge = 0, float $product_delivery_charge = 0)`
+`config(string $success_url, string $failure_url, float $amount, string $transaction_uuid, string $product_code = 'EPAYTEST', string $secret_key = '8gBm/:&EnhH.1/q', float $tax_amount = 0, float $product_service_charge = 0, float $product_delivery_charge = 0)`
 
 - Configures Esewa payment details.
 
