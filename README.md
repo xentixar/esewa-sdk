@@ -26,10 +26,9 @@ composer dump-autoload
 use Xentixar\EsewaSdk\Esewa;
 
 $esewa = new Esewa();
-$esewa->config('https://your-success-url.com', 'https://your-failure-url.com', 1000.00);
+$esewa->config('https://your-success-url.com', 'https://your-failure-url.com', 1000.00, 'your-transaction-uuid')
 ```
 
-- In production mode, to change the secret key given by Esewa, goto src/Esewa.php and replace the `8gBm/:&EnhH.1/q` with the original one in `$this->secret_key = "8gBm/:&EnhH.1/q";`.
 
 ### Initialize Payment Form
 
@@ -67,7 +66,7 @@ $response = $esewa->validate('1000.00', 'your-transaction-uuid', true);
 
 ## Methods:
 
-`config(string $success_url, string $failure_url, float $amount, string $product_code = 'EPAYTEST', float $tax_amount = 0, float $product_service_charge = 0, float $product_delivery_charge = 0)`
+`config(string $success_url, string $failure_url, float $amount, string $transaction_uuid, string $product_code = 'EPAYTEST', string $secret_key, float $tax_amount = 0, float $product_service_charge = 0, float $product_delivery_charge = 0)`
 
 - Configures Esewa payment details.
 
@@ -85,5 +84,5 @@ $response = $esewa->validate('1000.00', 'your-transaction-uuid', true);
 
 ## Security Note:
 
-- The secret key (`$this->secret_key = "8gBm/:&EnhH.1/q";`) is hardcoded in the class. Ensure that it's stored securely and not exposed in your codebase or version control system.
+- Ensure that the secret key is stored securely and not exposed in your codebase or version control system.
 - When dealing with transactions and security, always ensure that you validate transaction responses to ensure authenticity and avoid fraudulent transactions.
